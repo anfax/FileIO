@@ -1,4 +1,3 @@
-/**************************** CodeGeeX Inline Diff ****************************/
 # 二进制文件I/O模块文档
 # Binary File I/O Module Documentation
 一个用于处理二进制文件输入/输出操作的Fortran模块，支持多维数组。
@@ -76,4 +75,3 @@ The module includes basic error checking for:
 - Unsupported data types
 
 
-/******************** 8e35eccc-4acc-4290-bdcf-da233d30690e ********************/
