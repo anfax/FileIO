@@ -1,54 +1,79 @@
-# 二进制文件 I/O 模块文档
+/**************************** CodeGeeX Inline Diff ****************************/
+# 二进制文件I/O模块文档
+# Binary File I/O Module Documentation
+一个用于处理二进制文件输入/输出操作的Fortran模块，支持多维数组。
 
-一个用于处理多维度数组二进制文件输入/输出的 Fortran 模块。
-
-## 特性
-
-- 支持 1D 到 7D 数组操作
+## 特点
+A Fortran module for handling binary file input/output operations supporting multi-dimensional arrays.
+- 支持1D到7D数组操作
 - 直接访问二进制文件处理
-- 支持多种数据类型:
+- 支持多种数据类型：
     - 单精度实数 (real(4))
     - 双精度实数 (real(8))
     - 单精度复数 (complex(4))
     - 双精度复数 (complex(8))
 
 ## 使用方法
-
+## Features
 ### 初始化
 
+- Supports 1D to 7D array operations
+- Direct access binary file handling
+- Support for multiple data types:
+    - Single precision real (real(4))
+    - Double precision real (real(8))
+    - Single precision complex (complex(4))
+    - Double precision complex (complex(8))
+
+## Usage
+
+### Initialization
+
+```fortran
 type(BinaryFile) :: bf
 call bf%initialize(directory, file_tags, process_id, sample_data)
-
-参数:
+```
+参数：
 - `directory`: 目标目录路径
-- `file_tags`: 用于文件名构造的 3 个字符串标签数组
-- `process_id`: 进程标识符
-- `sample_data`: 示例数组，用于确定记录大小
 
-### 写操作
+Parameters:
+- `directory`: Target directory path
+- `file_tags`: Array of 3 string tags for filename construction
+- `process_id`: Process identifier
+- `sample_data`: Sample array for determining record size
 
+### Write Operations
+
+```fortran
 call bf%write(record_number, array_data)
+```
 
-参数:
-- `record_number`: 要写入的记录号
-- `array_data`: 要写入的数组数据 (支持 1D-7D)
+Parameters:
+- `record_number`: Record number to write to
+- `array_data`: Array data to write (1D-7D supported)
 
-### 读操作
+### Read Operations
 
+```fortran
 call bf%read(record_number, array_data)
+```
 
-参数:
-- `record_number`: 要读取的记录号
-- `array_data`: 存储读取数据的数组 (支持 1D-7D)
+Parameters:
+- `record_number`: Record number to read from
+- `array_data`: Array to store read data (1D-7D supported)
 
-### 关闭文件
+### Close File
 
+```fortran
 call bf%close()
+```
 
-## 错误处理
+## Error Handling
 
-该模块包括基本的错误检查:
-- 文件打开失败
-- 尝试对未打开的文件进行读/写操作
-- 不支持的数据类型
+The module includes basic error checking for:
+- File opening failures
+- Attempts to read/write to unopened files
+- Unsupported data types
 
+
+/******************** 8e35eccc-4acc-4290-bdcf-da233d30690e ********************/
